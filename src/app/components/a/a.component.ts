@@ -19,12 +19,16 @@ export class AComponent extends BaseComponent implements OnInit, OnDestroy {
   }
 
   public ngOnInit(): void {
-    super.setup();
+    this.setup();
     this.experiment();
   }
 
+  public setup(): void {
+    super.setup();
+  }
+
   public ngOnDestroy(): void {
-    this.subscriptions.forEach((subscription: Subscription): void => subscription.unsubscribe());
+    this.unsubscribe();
   }
 
   public experiment(): void {
@@ -44,5 +48,14 @@ export class AComponent extends BaseComponent implements OnInit, OnDestroy {
           .attr("fill", (datum: Datum): string => datum.color);
       }
     ));
+  }
+
+  public refresh() {
+    this.unsubscribe();
+    super.refresh();
+  }
+
+  public unsubscribe(): void {
+    this.subscriptions.forEach((subscription: Subscription): void => subscription.unsubscribe());
   }
 }

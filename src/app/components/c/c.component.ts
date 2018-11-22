@@ -13,16 +13,24 @@ export class CComponent extends BaseComponent implements OnInit {
   }
 
   public ngOnInit(): void {
-    super.setup();
+    this.setup();
     this.experiment();
   }
 
+  public setup(): void {
+    super.setup();
+  }
+
   public experiment(): void {
-    this.d3Wrapper.call(
+    this.svg.call(
       d3.zoom().on(
         "zoom",
         (): any => this.g.attr("transform", d3.event.transform)
       )
     );
+  }
+
+  public refresh() {
+    super.refresh();
   }
 }

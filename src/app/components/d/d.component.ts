@@ -14,11 +14,22 @@ export class DComponent extends BaseComponent implements OnInit {
   }
 
   public ngOnInit(): void {
-    super.setup();
+    this.setup();
     this.experiment();
   }
 
+  public setup(): void {
+    super.setup();
+  }
+
   public experiment(): void {
+    this.svg.call(
+      d3.zoom().on(
+        "zoom",
+        (): any => this.g.attr("transform", d3.event.transform)
+      )
+    );
+
     this.g.selectAll("circle").call(
       d3.drag().on(
         "drag",
@@ -31,12 +42,9 @@ export class DComponent extends BaseComponent implements OnInit {
         }
       )
     );
+  }
 
-    this.d3Wrapper.call(
-      d3.zoom().on(
-        "zoom",
-        (): any => this.g.attr("transform", d3.event.transform)
-      )
-    );
+  public refresh() {
+    super.refresh();
   }
 }

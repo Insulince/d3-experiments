@@ -14,8 +14,12 @@ export class BComponent extends BaseComponent implements OnInit {
   }
 
   public ngOnInit(): void {
-    super.setup();
+    this.setup();
     this.experiment();
+  }
+
+  public setup(): void {
+    super.setup();
   }
 
   public experiment(): void {
@@ -31,5 +35,9 @@ export class BComponent extends BaseComponent implements OnInit {
         }
       )
     );
+  }
+
+  public refresh() {
+    super.refresh();
   }
 }

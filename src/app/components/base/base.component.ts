@@ -40,4 +40,11 @@ export abstract class BaseComponent {
   }
 
   public abstract experiment(): void;
+
+  public refresh(): void {
+    d3.selectAll("svg").remove();
+    newData();
+    this.setup();
+    this.experiment();
+  }
 }
