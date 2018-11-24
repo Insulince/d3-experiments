@@ -8,6 +8,7 @@ import {PortalComponent} from "./components/portal/portal.component";
 import {CComponent} from "./components/c/c.component";
 import {DComponent} from "./components/d/d.component";
 import {EComponent} from "./components/e/e.component";
+import {FComponent} from "./components/f/f.component";
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import {EComponent} from "./components/e/e.component";
     BComponent,
     CComponent,
     DComponent,
-    EComponent
+    EComponent,
+    FComponent
   ],
   imports: [
     BrowserModule,

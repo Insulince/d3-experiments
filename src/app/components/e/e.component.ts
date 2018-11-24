@@ -56,6 +56,9 @@ export class EComponent extends BaseComponent implements OnInit {
 
   public setup(): void {
     super.setup();
+  }
+
+  public experiment(): void {
     this.g.selectAll("line")
       .data(this.generateGridData())
       .enter()
@@ -65,9 +68,7 @@ export class EComponent extends BaseComponent implements OnInit {
       .attr("y1", (datum: any): number => datum.y1)
       .attr("y2", (datum: any): number => datum.y2)
       .attr("style", "stroke:rgb(200,200,200);stroke-width:1");
-  }
 
-  public experiment(): void {
     this.svg.call(
       d3.zoom().on(
         "zoom",
