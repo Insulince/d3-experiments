@@ -7,7 +7,6 @@ export abstract class BaseComponent {
   public static readonly D3WrapperId: string = "d3-wrapper";
   public static readonly SVGBackgroundColor: string = "#666666";
 
-
   public d3Wrapper: Selection<any, any, any, any>;
   public svg: Selection<any, any, any, any>;
   public g: Selection<any, any, any, any>;
@@ -36,7 +35,9 @@ export abstract class BaseComponent {
       .attr("r", (datum: Datum): number => datum.radius)
       .attr("cx", (datum: Datum): number => datum.x + datum.radius)
       .attr("cy", (datum: Datum): number => datum.y + datum.radius)
-      .attr("fill", (datum: Datum): string => datum.color);
+      .attr("fill", (datum: Datum): string => datum.color)
+      .attr("stroke", "black")
+      .attr("stroke-width", "3");
   }
 
   public abstract experiment(): void;
