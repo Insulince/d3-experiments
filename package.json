@@ -21,9 +21,9 @@
     "@angular/platform-browser-dynamic": "~7.0.0",
     "@angular/router": "~7.0.0",
     "core-js": "^2.5.4",
-    "d3": "^5.7.0",
+    "d3": "^7.6.1",
     "d3-drag": "^1.2.3",
-    "d3-zoom": "^1.7.3",
+    "d3-zoom": "^3.0.0",
     "rxjs": "^6.3.3",
     "zone.js": "~0.8.26"
   },
